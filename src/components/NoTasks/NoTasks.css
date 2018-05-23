@@ -1,0 +1,24 @@
+.list{
+    width: 50%;
+    margin: auto;
+}
+.list :hover{
+    background-color: #cccccc;
+}
+
+.box{
+
+    width:100%;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    box-shadow: 0 2px 1px #ccc;
+    margin:auto;
+    padding:10px 0;
+}
+
+
+.taskList {
+    list-style-type:none;
+}

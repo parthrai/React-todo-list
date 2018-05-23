@@ -8,6 +8,7 @@ const addTask =(props) =>{
 
     return(
     <div className={classes.add}>
+        <p>todo ({props.totalTasks})</p>
         <form>
             <input type='text' placeholder="Task" onBlur={props.clicked}/>
 

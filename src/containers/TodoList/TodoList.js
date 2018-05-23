@@ -2,6 +2,8 @@ import React,{Component}  from 'react'
 import Aux from './../../hoc/a';
 import AddTask from './../../components/AddTask/AddTask';
 import ListTasks from './../../components/ListTasks/ListTask';
+import Layout from './../../components/Layout/Layout';
+import NoTasks from './../../components/NoTasks/NoTasks';
 
 
 class TodoList extends Component{
@@ -11,6 +13,8 @@ class TodoList extends Component{
         tasks:['task1','task2','task2'],
         name : ''
     }
+
+
 
     addTask = (event) =>{
         let task = event.target.value;
@@ -25,6 +29,10 @@ class TodoList extends Component{
 
     }
 
+    check = () =>{
+        return "<NoTasks/>"
+    }
+
     deleteTask = (event) =>{
 
         var array = [...this.state.tasks]; // make a separate copy of the array
@@ -32,16 +40,24 @@ class TodoList extends Component{
         array.splice(index, 1);
         this.setState({tasks: array});
 
-        console.log(this.state.tasks.length);
-        console.log(this.state.tasks);
+
 
     }
     render(){
+        let page;
+
+        if(this.state.tasks.length == 0)
+            page = <NoTasks/>
+        else
+            page = <ListTasks tasks={this.state.tasks} clicked={this.deleteTask}/>
+
+
         return(
           <Aux>
 
-           <AddTask clicked={this.addTask}/>
-           <ListTasks tasks={this.state.tasks} clicked={this.deleteTask}/>
+
+           <AddTask clicked={this.addTask} totalTasks={this.state.tasks.length}/>
+              {page}
 
           </Aux>
         );

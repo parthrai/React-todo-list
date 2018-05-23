@@ -10,8 +10,8 @@ class TodoList extends Component{
 
     state= {
 
-        tasks:['task1','task2','task2'],
-        name : ''
+        tasks:[],
+
     }
 
 
@@ -57,7 +57,7 @@ class TodoList extends Component{
 
 
            <AddTask clicked={this.addTask} totalTasks={this.state.tasks.length}/>
-              {page}
+           {page}
 
           </Aux>
         );

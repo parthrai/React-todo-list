@@ -1,6 +1,7 @@
 .list{
     width: 50%;
     margin: auto;
+    background-color: white;
 }
 .list :hover{
     background-color: #cccccc;
@@ -16,6 +17,7 @@
     box-shadow: 0 2px 1px #ccc;
     margin:auto;
     padding:10px 0;
+
 }
 
 
